@@ -72,6 +72,11 @@ function validate_operation() {
         check_required_param history url $URL
         ;;
 
+    diff)
+        check_required_param diff url $URL
+        check_required_param diff referenceUrl $REFERENCEURL
+        ;;
+
     *)
         echo "$OPERATION is not a valid operation"
         exit 1

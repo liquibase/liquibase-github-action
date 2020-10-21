@@ -2,7 +2,7 @@
 name: 'Liquibase Github Action'
 description: 'Validate, Prepare and Execute Liquibase CLI'
 inputs:
-  operation:  # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history]
+  operation:  # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
     description: 'Operation to run'
     required: true
   changeLogFile: # string
@@ -26,6 +26,9 @@ inputs:
   date: # string
     description: 'Date for rollbackToDate'
     required: false
+  referenceUrl: # string
+    description: 'Reference URL for diff'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -38,3 +41,4 @@ runs:
     - ${{ inputs.count }}
     - ${{ inputs.tag }}
     - ${{ inputs.date }}
+    - ${{ inputs.referenceUrl }}
