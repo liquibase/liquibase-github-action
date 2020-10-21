@@ -8,7 +8,7 @@ URL=$5
 COUNT=$6
 TAG=$7
 DATE=$8
-$REFERENCEURL=$9
+REFERENCEURL=$9
 PARAMS=()
 
 . common.sh
