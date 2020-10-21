@@ -5,8 +5,11 @@ inputs:
   operation:  # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
     description: 'Operation to run'
     required: true
+  classpath: # string
+    description: 'Path to Change Log directory'
+    required: false
   changeLogFile: # string
-    description: 'Path to Change Log File'
+    description: 'Name of Change Log File'
     required: false
   username: # string
     description: 'Database Username'
@@ -34,6 +37,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.operation }}
+    - ${{ inputs.classpath }}
     - ${{ inputs.changeLogFile }}
     - ${{ inputs.username }}
     - ${{ inputs.password }}
