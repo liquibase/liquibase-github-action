@@ -92,4 +92,6 @@ The `operation` input expects one of the following:
 ### Secrets
 It is a good practice to protect your database credentials with [Github Secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
 
-### License
+### Want to help?
+Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our
+guidelines for [contributing](https://www.liquibase.org/community/index.html)!
