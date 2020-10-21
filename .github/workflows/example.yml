@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  test-liquibase-action:
+    runs-on: ubuntu-latest
+    name: Test Liquibase Action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Liquibase Github Action
+        uses: ./ # Uses an action in the root directory
+        id: liquibase
+        with:
+          operation: 'update'
+          changeLogFile: 'example/samplechangelog.h2.sql'
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          url: ${{ secrets.URL }}

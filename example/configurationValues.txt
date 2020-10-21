@@ -1,0 +1,7 @@
+# Set these values in CI/CD configuration to connect to an embedded H2 database and run example
+
+changeLogFile: samplechangelog.h2.sql
+url: jdbc:h2:file:./H2_project/h2tutorial
+username: liqubase
+password: password
+logLevel: info
