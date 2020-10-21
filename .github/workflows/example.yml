@@ -12,7 +12,8 @@ jobs:
         id: liquibase
         with:
           operation: 'update'
-          changeLogFile: 'example/samplechangelog.h2.sql'
+          classpath: 'example/changelogs'
+          changeLogFile: 'samplechangelog.h2.sql'
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           url: ${{ secrets.URL }}
