@@ -1,0 +1,44 @@
+# action.yml
+name: 'Liquibase Github Action'
+description: 'Validate, Prepare and Execute Liquibase CLI'
+inputs:
+  operation:  # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
+    description: 'Operation to run'
+    required: true
+  changeLogFile: # string
+    description: 'Path to Change Log File'
+    required: false
+  username: # string
+    description: 'Database Username'
+    required: true
+  password: # string
+    description: 'Database Password'
+    required: true
+  url: # string
+    description: 'Database URL'
+    required: true
+  count: # integer
+    description: 'Count for updateCount and rollbackCount'
+    required: false
+  tag: # string
+    description: 'Tag for tag, updateToTag, and rollback'
+    required: false
+  date: # string
+    description: 'Date for rollbackToDate'
+    required: false
+  referenceUrl: # string
+    description: 'Reference URL for diff'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.operation }}
+    - ${{ inputs.changeLogFile }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.url }}
+    - ${{ inputs.count }}
+    - ${{ inputs.tag }}
+    - ${{ inputs.date }}
+    - ${{ inputs.referenceUrl }}
