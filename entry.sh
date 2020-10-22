@@ -12,7 +12,7 @@ DATE=$9
 REFERENCEURL=$10
 PARAMS=()
 
-. common.sh
+. $PWD/common.sh
 
 check_required_param $OPERATION username $USERNAME
 check_required_param $OPERATION password $PASSWORD
