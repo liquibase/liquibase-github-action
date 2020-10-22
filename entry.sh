@@ -24,7 +24,7 @@ function check_required_param() {
         echo "$OP requires $KEY to not be empty"
         exit 1
     fi
-    if [ "$IsValue" = true ]
+    if [ "$IsVALUE" = true ]
     then
         VALUES+=($VAL)
     else
