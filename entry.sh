@@ -50,35 +50,35 @@ function validate_operation() {
 
     tag)
         check_required_param tag url $URL
-        check_required_param tag tag $TAG
+        check_required_param tag tag $TAG true
         ;;
 
     updateToTag)
         check_required_param updateToTag classpath $CLASSPATH
         check_required_param updateToTag changeLogFile $CHANGELOGFILE
         check_required_param updateToTag url $URL
-        check_required_param updateToTag tag $TAG
+        check_required_param updateToTag tag $TAG true
         ;;
 
     rollback)
         check_required_param rollback classpath $CLASSPATH
         check_required_param rollback changeLogFile $CHANGELOGFILE
         check_required_param rollback url $URL
-        check_required_param rollback tag $TAG
+        check_required_param rollback tag $TAG true
         ;;
 
     rollbackCount)
         check_required_param rollbackCount classpath $CLASSPATH
         check_required_param rollbackCount changeLogFile $CHANGELOGFILE
         check_required_param rollbackCount url $URL
-        check_required_param rollbackCount count $COUNT
+        check_required_param rollbackCount count $COUNT true
         ;;
 
     rollbackToDate)
         check_required_param rollbackToDate classpath $CLASSPATH
         check_required_param rollbackToDate changeLogFile $CHANGELOGFILE
         check_required_param rollbackToDate url $URL
-        check_required_param rollbackToDate date $DATE
+        check_required_param rollbackToDate date $DATE true
         ;;
 
     updateSQL)
@@ -90,7 +90,7 @@ function validate_operation() {
     futureRollbackSQL)
         check_required_param futureRollbackSQL classpath $CLASSPATH
         check_required_param futureRollbackSQL changeLogFile $CHANGELOGFILE
-        check_required_param futureRollbackSQL url $URL
+        check_required_param futureRollbackSQL url $URL true
         ;;
 
     status)
@@ -105,7 +105,7 @@ function validate_operation() {
 
     diff)
         check_required_param diff url $URL
-        check_required_param diff referenceUrl $REFERENCEURL
+        check_required_param diff referenceUrl $REFERENCEURL true
         ;;
 
     *)
