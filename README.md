@@ -86,6 +86,10 @@ The `operation` input expects one of the following:
 *   classpath
 *   changeLogFile
 
+#### status
+*   classpath
+*   changeLogFile
+
 #### diff
 *   referenceUrl
 
