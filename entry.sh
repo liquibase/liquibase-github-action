@@ -10,19 +10,28 @@ COUNT=$7
 TAG=$8
 DATE=$9
 REFERENCEURL=$10
+
 PARAMS=()
+VALUES=()
 
 function check_required_param() {
     local OP=$1
     local KEY=$2
     local VAL=$3
+    local IsVALUE=${4:-false}
     if [ -z "$VAL" ]
     then
         echo "$OP requires $KEY to not be empty"
         exit 1
     fi
-    PARAMS+=(--$KEY=$VAL)
+    if [ "$IsValue" = true ]
+    then
+        VALUES+=($VAL)
+    else
+        PARAMS+=(--$KEY=$VAL)
+    fi
 }
+
 
 function validate_operation() {
     case $OPERATION in
@@ -36,7 +45,7 @@ function validate_operation() {
         check_required_param updateCount classpath $CLASSPATH
         check_required_param updateCount changeLogFile $CHANGELOGFILE
         check_required_param updateCount url $URL
-        check_required_param updateCount count $COUNT
+        check_required_param updateCount count $COUNT true
         ;;
 
     tag)
@@ -108,4 +117,4 @@ check_required_param $OPERATION username $USERNAME
 check_required_param $OPERATION password $PASSWORD
 validate_operation
 
-docker-entrypoint.sh "${PARAMS[@]}" $OPERATION
+docker-entrypoint.sh "${PARAMS[@]}" $OPERATION "${VALUES[@]}"
