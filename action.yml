@@ -46,3 +46,6 @@ runs:
     - ${{ inputs.tag }}
     - ${{ inputs.date }}
     - ${{ inputs.referenceUrl }}
+branding:
+  icon: database
+  color: red
