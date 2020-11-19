@@ -119,4 +119,4 @@ check_required_param $OPERATION username $USERNAME
 check_required_param $OPERATION password $PASSWORD
 validate_operation
 
-docker-entrypoint.sh "${PARAMS[@]}" $OPERATION "${VALUES[@]}"
+/liquibase/docker-entrypoint.sh "${PARAMS[@]}" $OPERATION "${VALUES[@]}"
