@@ -1,4 +1,4 @@
-FROM liquibase/liquibase:4.1
+FROM liquibase/liquibase:latest
 
 COPY entry.sh /entry.sh
 
