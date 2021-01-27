@@ -46,6 +46,7 @@ runs:
     - ${{ inputs.tag }}
     - ${{ inputs.date }}
     - ${{ inputs.referenceUrl }}
+    - ${{ inputs.logLevel }}
 branding:
   icon: database
   color: red
