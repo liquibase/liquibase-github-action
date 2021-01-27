@@ -49,49 +49,59 @@ The `operation` input expects one of the following:
 *   diff
 
 ### Optional Inputs
-`classpath`, `changeLogFile`, `count`, `tag`, `date`, and `referenceUrl` are optional inputs that may be required by some operations. The following operations have the subsequent required inputs:
+`classpath`, `changeLogFile`, `count`, `tag`, `date`,`referenceUrl`, and `logLevel` are optional inputs that may be required by some operations. The following operations have the subsequent required inputs:
 
 #### updateCount
 *   classpath
 *   changeLogFile
 *   count
+*   logLevel
 
 #### tag
 *   tag
+*   logLevel
 
 #### updateToTag
 *   classpath
 *   changeLogFile
 *   tag
+*   logLevel
 
 #### rollback
 *   classpath
 *   changeLogFile
 *   tag
+*   logLevel
 
 #### rollbackCount
 *   classpath
 *   changeLogFile
 *   count
+*   logLevel
 
 #### rollbackToDate
 *   classpath
 *   changeLogFile
 *   date
+*   logLevel
 
 #### updateSQL
 *   changeLogFile
+*   logLevel
 
 #### futureRollbackSQL
 *   classpath
 *   changeLogFile
+*   logLevel
 
 #### status
 *   classpath
 *   changeLogFile
+*   logLevel
 
 #### diff
 *   referenceUrl
+*   logLevel
 
 ### Secrets
 It is a good practice to protect your database credentials with [Github Secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
