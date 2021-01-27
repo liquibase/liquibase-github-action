@@ -49,7 +49,7 @@ The `operation` input expects one of the following:
 *   diff
 
 ### Optional Inputs
-`classpath`, `changeLogFile`, `count`, `tag`, `date`,`referenceUrl`, and `logLevel` are optional inputs that may be required by some operations. The following operations have the subsequent required inputs:
+`classpath`, `changeLogFile`, `count`, `tag`, `date`, `referenceUrl`, and `logLevel` are optional inputs that may be required by some operations. The following operations have the subsequent required inputs:
 
 #### updateCount
 *   classpath
