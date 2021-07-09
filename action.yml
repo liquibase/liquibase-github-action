@@ -2,7 +2,7 @@
 name: 'Liquibase Github Action'
 description: 'Validate, Prepare and Execute Liquibase CLI'
 inputs:
-  operation:  # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
+  operation: # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
     description: 'Operation to run'
     required: true
   classpath: # string
