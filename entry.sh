@@ -94,8 +94,8 @@ function validate_operation() {
         ;;
 
     status)
-        check_required_param updateSQL classpath $CLASSPATH
-        check_required_param updateSQL changeLogFile $CHANGELOGFILE
+        check_required_param status classpath $CLASSPATH
+        check_required_param status changeLogFile $CHANGELOGFILE
         check_required_param status url $URL
         ;;
 
