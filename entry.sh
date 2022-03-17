@@ -108,6 +108,11 @@ function validate_operation() {
         check_required_param diff referenceUrl $REFERENCEURL true
         ;;
 
+    validate)
+        check_required_param validate url $URL
+        check_required_param validate changeLogFile $CHANGELOGFILE
+        ;;
+
     *)
         echo "$OPERATION is not a valid operation"
         exit 1
