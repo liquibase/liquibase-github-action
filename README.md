@@ -57,9 +57,9 @@ The `operation` input expects one of the following:
 
 ### Optional Inputs
 
-`username`, `password`, `url`, `classpath`, `changeLogFile`, `count`, `tag`, `date`, `referenceUrl` and `proLicenseKey` are optional inputs that may be required by some operations.
+`username`, `password`, `url`, `classpath`, `changeLogFile`, `count`, `tag`, `date`, `referenceUrl`, `proLicenseKey` and `hubApiKey` are optional inputs that may be required by some operations.
 
-It is recommended that `proLicenseKey` is not stored in plaintext, but rather using a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
+It is recommended that `proLicenseKey` and `hubApiKey` are not stored in plaintext, but rather using a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
 ```
           proLicenseKey: ${{ secrets.PRO_LICENSE_KEY }}

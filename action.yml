@@ -38,6 +38,9 @@ inputs:
   proLicenseKey: # string
     description: 'Liquibase Pro license key used to unlock paid capabilities'
     required: false
+  hubApiKey: # string
+    description: 'Liquibase Hub API key for operations'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
