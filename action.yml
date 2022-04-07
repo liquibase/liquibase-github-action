@@ -57,6 +57,7 @@ runs:
     - ${{ inputs.referenceUrl }}
     - ${{ inputs.checksSettingsFile }}
     - ${{ inputs.proLicenseKey }}
+    - ${{ inputs.hubApiKey }}
 branding:
   icon: database
   color: red
