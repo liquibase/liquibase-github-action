@@ -2,7 +2,7 @@
 name: 'Liquibase Github Action'
 description: 'Validate, Prepare and Execute Liquibase CLI'
 inputs:
-  operation: # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff]
+  operation: # [update, updateCount, tag, updateToTag, rollback, rollbackCount, rollbackToDate, updateSQL, futureRollbackSQL, status, history, diff, checks run]
     description: 'Operation to run'
     required: true
   classpath: # string
@@ -13,13 +13,13 @@ inputs:
     required: false
   username: # string
     description: 'Database Username'
-    required: true
+    required: false
   password: # string
     description: 'Database Password'
-    required: true
+    required: false
   url: # string
     description: 'Database URL'
-    required: true
+    required: false
   count: # integer
     description: 'Count for updateCount and rollbackCount'
     required: false
@@ -31,6 +31,15 @@ inputs:
     required: false
   referenceUrl: # string
     description: 'Reference URL for diff'
+    required: false
+  checksSettingsFile: # string
+    description: 'Configuration file for checks execution'
+    required: false
+  proLicenseKey: # string
+    description: 'Liquibase Pro license key used to unlock paid capabilities'
+    required: false
+  hubApiKey: # string
+    description: 'Liquibase Hub API key for operations'
     required: false
 runs:
   using: 'docker'
@@ -46,6 +55,9 @@ runs:
     - ${{ inputs.tag }}
     - ${{ inputs.date }}
     - ${{ inputs.referenceUrl }}
+    - ${{ inputs.checksSettingsFile }}
+    - ${{ inputs.proLicenseKey }}
+    - ${{ inputs.hubApiKey }}
 branding:
   icon: database
   color: red
