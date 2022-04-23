@@ -45,6 +45,7 @@ The `operation` input expects one of the following:
 - updateCount
 - tag
 - updateToTag
+- update-testing-rollback
 - rollback
 - rollbackCount
 - rollbackToDate
@@ -91,6 +92,14 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - tag
+
+#### update-testing-rollback
+
+- username
+- password
+- url
+- classpath
+- changeLogFile
 
 #### rollback
 

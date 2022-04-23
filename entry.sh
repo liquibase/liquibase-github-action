@@ -94,6 +94,14 @@ function validate_operation() {
         check_required_param updateToTag tag $TAG true
         ;;
 
+    update-testing-rollback)
+        check_required_param update-testing-rollback username $USERNAME
+        check_required_param update-testing-rollback password $PASSWORD
+        check_required_param update-testing-rollback classpath $CLASSPATH
+        check_required_param update-testing-rollback changeLogFile $CHANGELOGFILE
+        check_required_param update-testing-rollback url $URL
+        ;;
+
     rollback)
         check_required_param rollback username $USERNAME
         check_required_param rollback password $PASSWORD
