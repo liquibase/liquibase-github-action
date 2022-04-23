@@ -45,7 +45,7 @@ The `operation` input expects one of the following:
 - updateCount
 - tag
 - updateToTag
-- update-testing-rollback
+- updateTestingRollback
 - rollback
 - rollbackCount
 - rollbackToDate
