@@ -13,6 +13,7 @@ REFERENCEURL=${10}
 CHECKSSETTINGSFILE=${11}
 PROLICENSEKEY=${12}
 HUBAPIKEY=${13}
+LICENSEKEY=${14}
 
 PARAMS=()
 VALUES=()
@@ -179,6 +180,7 @@ function validate_operation() {
 
 check_optional_param "$OPERATION" proLicenseKey $PROLICENSEKEY
 check_optional_param "$OPERATION" hubApiKey $HUBAPIKEY
+check_optional_param "$OPERATION" licenseKey $LICENSEKEY
 validate_operation
 
 docker-entrypoint.sh "${PARAMS[@]}" $OPERATION "${VALUES[@]}" "${SECONDPARAMS[@]}"
