@@ -13,6 +13,8 @@ REFERENCEURL=${10}
 CHECKSSETTINGSFILE=${11}
 PROLICENSEKEY=${12}
 HUBAPIKEY=${13}
+DATABASECHANGELOGTABLENAME=${14}
+DATABASECHANGELOGLOCKTABLENAME=${15}
 
 PARAMS=()
 VALUES=()
@@ -67,6 +69,8 @@ function validate_operation() {
         check_required_param update classpath $CLASSPATH
         check_required_param update changeLogFile $CHANGELOGFILE
         check_required_param update url $URL
+        check_optional_param update databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param update databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     updateCount)
@@ -76,6 +80,8 @@ function validate_operation() {
         check_required_param updateCount changeLogFile $CHANGELOGFILE
         check_required_param updateCount url $URL
         check_required_param updateCount count $COUNT true
+        check_optional_param updateCount databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param updateCount databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     tag)
@@ -83,6 +89,8 @@ function validate_operation() {
         check_required_param tag password $PASSWORD
         check_required_param tag url $URL
         check_required_param tag tag $TAG true
+        check_optional_param tag databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param tag databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     updateToTag)
@@ -92,6 +100,8 @@ function validate_operation() {
         check_required_param updateToTag changeLogFile $CHANGELOGFILE
         check_required_param updateToTag url $URL
         check_required_param updateToTag tag $TAG true
+        check_optional_param updateToTag databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param updateToTag databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     rollback)
@@ -101,6 +111,8 @@ function validate_operation() {
         check_required_param rollback changeLogFile $CHANGELOGFILE
         check_required_param rollback url $URL
         check_required_param rollback tag $TAG true
+        check_optional_param rollback databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param rollback databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     rollbackCount)
@@ -110,6 +122,8 @@ function validate_operation() {
         check_required_param rollbackCount changeLogFile $CHANGELOGFILE
         check_required_param rollbackCount url $URL
         check_required_param rollbackCount count $COUNT true
+        check_optional_param rollbackCount databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param rollbackCount databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     rollbackToDate)
@@ -119,6 +133,8 @@ function validate_operation() {
         check_required_param rollbackToDate changeLogFile $CHANGELOGFILE
         check_required_param rollbackToDate url $URL
         check_required_param rollbackToDate date $DATE true
+        check_optional_param rollbackToDate databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param rollbackToDate databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     updateSQL)
@@ -127,6 +143,8 @@ function validate_operation() {
         check_required_param updateSQL classpath $CLASSPATH
         check_required_param updateSQL changeLogFile $CHANGELOGFILE
         check_required_param updateSQL url $URL
+        check_optional_param updateSQL databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param updateSQL databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     futureRollbackSQL)
@@ -135,6 +153,8 @@ function validate_operation() {
         check_required_param futureRollbackSQL classpath $CLASSPATH
         check_required_param futureRollbackSQL changeLogFile $CHANGELOGFILE
         check_required_param futureRollbackSQL url $URL true
+        check_optional_param futureRollbackSQL databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param futureRollbackSQL databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     status)
@@ -143,12 +163,16 @@ function validate_operation() {
         check_required_param status classpath $CLASSPATH
         check_required_param status changeLogFile $CHANGELOGFILE
         check_required_param status url $URL
+        check_optional_param status databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param status databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     history)
         check_required_param history username $USERNAME
         check_required_param history password $PASSWORD
         check_required_param history url $URL
+        check_optional_param history databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param history databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     diff)
@@ -156,6 +180,8 @@ function validate_operation() {
         check_required_param diff password $PASSWORD
         check_required_param diff url $URL
         check_required_param diff referenceUrl $REFERENCEURL true
+        check_optional_param diff databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
+        check_optional_param diff databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
     validate)

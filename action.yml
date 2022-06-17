@@ -41,6 +41,12 @@ inputs:
   hubApiKey: # string
     description: 'Liquibase Hub API key for operations'
     required: false
+  databaseChangeLogTableName: # string
+    description: 'Specifies the Liquibase changelog table'
+    required: false
+  databaseChangeLogLockTableName: # string
+    description: 'Specifies the Liquibase changelog lock table'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -58,6 +64,8 @@ runs:
     - ${{ inputs.checksSettingsFile }}
     - ${{ inputs.proLicenseKey }}
     - ${{ inputs.hubApiKey }}
+    - ${{ inputs.databaseChangeLogTableName }}
+    - ${{ inputs.databaseChangeLogLockTableName }}
 branding:
   icon: database
   color: red

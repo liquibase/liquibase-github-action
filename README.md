@@ -53,6 +53,7 @@ The `operation` input expects one of the following:
 - status
 - history
 - diff
+- validate
 - 'checks run' (note that the `checks run` command must be wrapped with quotes in your `build.yml` because the command has a space in it)
 
 ### Optional Inputs
@@ -61,7 +62,7 @@ The `operation` input expects one of the following:
 
 It is recommended that `proLicenseKey` and `hubApiKey` are not stored in plaintext, but rather using a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
-```
+```yaml
           proLicenseKey: ${{ secrets.PRO_LICENSE_KEY }}
 ```
 
@@ -75,6 +76,8 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - count
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### tag
 
@@ -82,6 +85,8 @@ The following operations have the subsequent required inputs:
 - password
 - url
 - tag
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### updateToTag
 
@@ -91,6 +96,8 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - tag
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### rollback
 
@@ -100,6 +107,8 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - tag
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### rollbackCount
 
@@ -109,6 +118,8 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - count
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### rollbackToDate
 
@@ -118,6 +129,8 @@ The following operations have the subsequent required inputs:
 - classpath
 - changeLogFile
 - date
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### updateSQL
 
@@ -125,6 +138,8 @@ The following operations have the subsequent required inputs:
 - password
 - url
 - changeLogFile
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### futureRollbackSQL
 
@@ -133,6 +148,8 @@ The following operations have the subsequent required inputs:
 - url
 - classpath
 - changeLogFile
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### status
 
@@ -141,6 +158,8 @@ The following operations have the subsequent required inputs:
 - url
 - classpath
 - changeLogFile
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### diff
 
@@ -148,6 +167,15 @@ The following operations have the subsequent required inputs:
 - password
 - url
 - referenceUrl
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
+
+#### validate
+
+- username
+- password
+- url
+- changeLogFile
 
 #### checks run
 
@@ -166,9 +194,11 @@ guidelines for [contributing](https://www.liquibase.org/community/index.html)!
 #### Developer instructions
 
 We've found that the easiest way to test changes to this GitHub action is to:
+
 - fork this repo to your personal account
 - create a sample `build.yml` to trigger the action, noting that the `uses` line specifies the relative path, which will run the action as specified in your fork (rather than the action that is published by Liquibase)
-    ```
+
+    ```yaml
     name: Build and Test
     
     on: [push, pull_request]
@@ -186,4 +216,5 @@ We've found that the easiest way to test changes to this GitHub action is to:
               checksSettingsFile: 'liquibasech.conf'
               proLicenseKey: ${{ secrets.PRO_LICENSE_KEY }}
     ```
+
 - make changes as desired and observe the execution in GitHub
