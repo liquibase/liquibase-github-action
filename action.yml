@@ -36,10 +36,13 @@ inputs:
     description: 'Configuration file for checks execution'
     required: false
   proLicenseKey: # string
-    description: 'Liquibase Pro license key used to unlock paid capabilities'
+    description: 'DEPRECATED: Liquibase Pro license key used to unlock paid capabilities'
     required: false
   hubApiKey: # string
     description: 'Liquibase Hub API key for operations'
+    required: false
+  licenseKey: # string
+    description: 'Liquibase license key used to unlock paid capabilities'
     required: false
   databaseChangeLogTableName: # string
     description: 'Specifies the Liquibase changelog table'
@@ -64,6 +67,7 @@ runs:
     - ${{ inputs.checksSettingsFile }}
     - ${{ inputs.proLicenseKey }}
     - ${{ inputs.hubApiKey }}
+    - ${{ inputs.licenseKey }}
     - ${{ inputs.databaseChangeLogTableName }}
     - ${{ inputs.databaseChangeLogLockTableName }}
 branding:

@@ -58,12 +58,12 @@ The `operation` input expects one of the following:
 
 ### Optional Inputs
 
-`username`, `password`, `url`, `classpath`, `changeLogFile`, `count`, `tag`, `date`, `referenceUrl`, `proLicenseKey` and `hubApiKey` are optional inputs that may be required by some operations.
+`username`, `password`, `url`, `classpath`, `changeLogFile`, `count`, `tag`, `date`, `referenceUrl`, `proLicenseKey` (deprecated in favor of `licenseKey`) and `hubApiKey` are optional inputs that may be required by some operations.
 
-It is recommended that `proLicenseKey` and `hubApiKey` are not stored in plaintext, but rather using a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
+It is recommended that `licenseKey` and `hubApiKey` are not stored in plaintext, but rather using a [GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
 ```yaml
-          proLicenseKey: ${{ secrets.PRO_LICENSE_KEY }}
+          licenseKey: ${{ secrets.PRO_LICENSE_KEY }}
 ```
 
 The following operations have the subsequent required inputs:
