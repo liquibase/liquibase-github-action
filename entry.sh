@@ -67,22 +67,22 @@ function validate_operation() {
     update)
         check_required_param update username $USERNAME
         check_required_param update password $PASSWORD
-        check_required_param update classpath $CLASSPATH
         check_required_param update changeLogFile $CHANGELOGFILE
         check_required_param update url $URL
         check_optional_param update databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param update databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param update classpath $CLASSPATH
         ;;
 
     updateCount)
         check_required_param updateCount username $USERNAME
         check_required_param updateCount password $PASSWORD
-        check_required_param updateCount classpath $CLASSPATH
         check_required_param updateCount changeLogFile $CHANGELOGFILE
         check_required_param updateCount url $URL
         check_required_param updateCount count $COUNT true
         check_optional_param updateCount databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param updateCount databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param updateCount classpath $CLASSPATH
         ;;
 
     tag)
@@ -97,75 +97,75 @@ function validate_operation() {
     updateToTag)
         check_required_param updateToTag username $USERNAME
         check_required_param updateToTag password $PASSWORD
-        check_required_param updateToTag classpath $CLASSPATH
         check_required_param updateToTag changeLogFile $CHANGELOGFILE
         check_required_param updateToTag url $URL
         check_required_param updateToTag tag $TAG true
         check_optional_param updateToTag databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param updateToTag databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param updateToTag classpath $CLASSPATH
         ;;
 
     rollback)
         check_required_param rollback username $USERNAME
         check_required_param rollback password $PASSWORD
-        check_required_param rollback classpath $CLASSPATH
         check_required_param rollback changeLogFile $CHANGELOGFILE
         check_required_param rollback url $URL
         check_required_param rollback tag $TAG true
         check_optional_param rollback databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param rollback databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param rollback classpath $CLASSPATH
         ;;
 
     rollbackCount)
         check_required_param rollbackCount username $USERNAME
         check_required_param rollbackCount password $PASSWORD
-        check_required_param rollbackCount classpath $CLASSPATH
         check_required_param rollbackCount changeLogFile $CHANGELOGFILE
         check_required_param rollbackCount url $URL
         check_required_param rollbackCount count $COUNT true
         check_optional_param rollbackCount databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param rollbackCount databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param rollbackCount classpath $CLASSPATH
         ;;
 
     rollbackToDate)
         check_required_param rollbackToDate username $USERNAME
         check_required_param rollbackToDate password $PASSWORD
-        check_required_param rollbackToDate classpath $CLASSPATH
         check_required_param rollbackToDate changeLogFile $CHANGELOGFILE
         check_required_param rollbackToDate url $URL
         check_required_param rollbackToDate date $DATE true
         check_optional_param rollbackToDate databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param rollbackToDate databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param rollbackToDate classpath $CLASSPATH
         ;;
 
     updateSQL)
         check_required_param updateSQL username $USERNAME
         check_required_param updateSQL password $PASSWORD
-        check_required_param updateSQL classpath $CLASSPATH
         check_required_param updateSQL changeLogFile $CHANGELOGFILE
         check_required_param updateSQL url $URL
         check_optional_param updateSQL databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param updateSQL databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param updateSQL classpath $CLASSPATH
         ;;
 
     futureRollbackSQL)
         check_required_param futureRollbackSQL username $USERNAME
         check_required_param futureRollbackSQL password $PASSWORD
-        check_required_param futureRollbackSQL classpath $CLASSPATH
         check_required_param futureRollbackSQL changeLogFile $CHANGELOGFILE
         check_required_param futureRollbackSQL url $URL true
         check_optional_param futureRollbackSQL databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param futureRollbackSQL databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param futureRollbackSQL classpath $CLASSPATH
         ;;
 
     status)
         check_required_param status username $USERNAME
         check_required_param status password $PASSWORD
-        check_required_param status classpath $CLASSPATH
         check_required_param status changeLogFile $CHANGELOGFILE
         check_required_param status url $URL
         check_optional_param status databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param status databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param status classpath $CLASSPATH
         ;;
 
     history)
