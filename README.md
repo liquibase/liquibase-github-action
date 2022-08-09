@@ -9,7 +9,7 @@ Basic Update
 ```yaml
 steps:
   - uses: actions/checkout@v2
-  - uses: liquibase/liquibase-github-action@v5
+  - uses: liquibase/liquibase-github-action@v7
     with:
       operation: 'update'
       classpath: 'example/changelogs'
@@ -24,7 +24,7 @@ Optional Parameter Example:
 ```yaml
 steps:
   - uses: actions/checkout@v2
-  - uses: liquibase/liquibase-github-action@v5
+  - uses: liquibase/liquibase-github-action@v7
     with:
       operation: 'updateCount'
       classpath: 'example/changelogs'
