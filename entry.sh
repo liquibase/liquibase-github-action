@@ -105,6 +105,14 @@ function validate_operation() {
         check_optional_param updateToTag databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
         ;;
 
+    updateTestingRollback)
+        check_required_param updateTestingRollback username $USERNAME
+        check_required_param updateTestingRollback password $PASSWORD
+        check_required_param updateTestingRollback classpath $CLASSPATH
+        check_required_param updateTestingRollback changeLogFile $CHANGELOGFILE
+        check_required_param updateTestingRollback url $URL
+        ;;
+
     rollback)
         check_required_param rollback username $USERNAME
         check_required_param rollback password $PASSWORD

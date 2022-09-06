@@ -45,6 +45,7 @@ The `operation` input expects one of the following:
 - updateCount
 - tag
 - updateToTag
+- updateTestingRollback
 - rollback
 - rollbackCount
 - rollbackToDate
@@ -98,6 +99,14 @@ The following operations have the subsequent required inputs:
 - tag
 - databaseChangeLogTableName (optional)
 - databaseChangeLogLockTableName (optional)
+
+#### update-testing-rollback
+
+- username
+- password
+- url
+- classpath
+- changeLogFile
 
 #### rollback
 
