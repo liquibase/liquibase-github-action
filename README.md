@@ -56,6 +56,7 @@ The `operation` input expects one of the following:
 - diff
 - validate
 - 'checks run' (note that the `checks run` command must be wrapped with quotes in your `build.yml` because the command has a space in it)
+- drop-all
 
 ### Optional Inputs
 
@@ -190,6 +191,12 @@ The following operations have the subsequent required inputs:
 
 - changeLogFile
 - checksSettingsFile
+
+#### drop-all
+
+- username
+- password
+- url
 
 ### Secrets
 

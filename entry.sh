@@ -205,6 +205,12 @@ function validate_operation() {
         check_required_param "checks run" checksSettingsFile $CHECKSSETTINGSFILE false true
         ;;
 
+    drop-all)
+        check_required_param drop-all username $USERNAME
+        check_required_param drop-all password $PASSWORD
+        check_required_param drop-all url $URL
+        ;;
+
     *)
         echo "$OPERATION is not a valid operation"
         exit 1
