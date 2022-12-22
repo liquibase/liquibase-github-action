@@ -11,6 +11,9 @@ inputs:
   changeLogFile: # string
     description: 'Name of Change Log File'
     required: false
+  contexts: # string
+    description: 'Contexts'
+    required: false
   username: # string
     description: 'Database Username'
     required: false
@@ -70,6 +73,7 @@ runs:
     - ${{ inputs.licenseKey }}
     - ${{ inputs.databaseChangeLogTableName }}
     - ${{ inputs.databaseChangeLogLockTableName }}
+    - ${{ inputs.contexts }}
 branding:
   icon: database
   color: red

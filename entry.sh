@@ -16,6 +16,7 @@ HUBAPIKEY=${13}
 LICENSEKEY=${14}
 DATABASECHANGELOGTABLENAME=${15}
 DATABASECHANGELOGLOCKTABLENAME=${16}
+CONTEXTS=${17}
 
 PARAMS=()
 VALUES=()
@@ -72,6 +73,7 @@ function validate_operation() {
         check_required_param update url $URL
         check_optional_param update databaseChangeLogTableName $DATABASECHANGELOGTABLENAME
         check_optional_param update databaseChangeLogLockTableName $DATABASECHANGELOGLOCKTABLENAME
+        check_optional_param update contexts $CONTEXTS
         ;;
 
     updateCount)

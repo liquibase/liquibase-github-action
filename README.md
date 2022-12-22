@@ -68,6 +68,16 @@ It is recommended that `licenseKey` and `hubApiKey` are not stored in plaintext,
 ```
 
 The following operations have the subsequent required inputs:
+#### update
+
+- username
+- password
+- url
+- classpath
+- changeLogFile
+- contexts (optional)
+- databaseChangeLogTableName (optional)
+- databaseChangeLogLockTableName (optional)
 
 #### updateCount
 
